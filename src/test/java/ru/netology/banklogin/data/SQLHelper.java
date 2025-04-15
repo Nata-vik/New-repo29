@@ -39,7 +39,7 @@ public class SQLHelper {
     @SneakyThrows
     public static void cleanAuthCodes() {
         try (var conn = getConn()) {
-            QUERY_RUNNER.execute(conn, "DELETE FROM auth.codes");
+            QUERY_RUNNER.execute(conn, "DELETE FROM auth_codes");
         }
     }
 

@@ -26,7 +26,6 @@ public class BankLoginTest {
     @BeforeEach
     void setUp() {
         loginPage = open("http://localhost:9999", LoginPage.class);
-
     }
 
     @Test
@@ -51,8 +50,7 @@ public class BankLoginTest {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.generationRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
-        loginPage.verifyErrorNotification("Ошибка! Неверно указан логин или пароль");
+        verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте еще раз.");
     }
-
 
 }

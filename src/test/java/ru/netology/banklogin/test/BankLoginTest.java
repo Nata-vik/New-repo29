@@ -50,7 +50,7 @@ public class BankLoginTest {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.generationRandomVerificationCode();
         verificationPage.verify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте еще раз.");
+        verificationPage.verifyErrorNotification("Неверно указан код!");
     }
 
 }
